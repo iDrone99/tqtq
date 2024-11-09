@@ -44,7 +44,7 @@ app.get('/tqtq/api/auth/discord/redirect', async (req, res) => {
             client_secret: process.env.ClientSecret,
             grant_type: 'authorization_code',
             code: code.toString(),
-            redirect_uri: 'http://localhost:1500/api/auth/discord/redirect',
+            redirect_uri: 'https://idrone99.github.io/tqtq/api/auth/discord/redirect',
         });
 
         const output = await axios.post('https://discord.com/api/v10/oauth2/token',
@@ -96,6 +96,6 @@ app.get('/tqtq/api/auth/logout', (req, res) => {
 });
 
 app.get('/tqtq/api/auth/login', (req, res) => {
-    res.redirect('https://discord.com/oauth2/authorize?client_id=1086587635373461574&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A1500%2Fapi%2Fauth%2Fdiscord%2Fredirect&scope=guilds+identify+email')
+    res.redirect('https://discord.com/oauth2/authorize?client_id=1086587635373461574&response_type=code&redirect_uri=https%3A%2F%2Fidrone99.github.io%2Ftqtq%2Fapi%2Fauth%2Fdiscord%2Fredirect&scope=guilds+identify+email')
 })
 app.listen(1500, () => {console.log(`Running on localhost:1500`)});
