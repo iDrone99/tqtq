@@ -19,23 +19,23 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/dashboard', (req, res) => {
+app.get('/old/dashboard', (req, res) => {
     if (!req.session.user) {
         return res.redirect('/');
     }
     res.sendFile(path.join(__dirname, 'dashboard.html'));
 });
 
-app.get('/rules', (req, res) => {
+app.get('/old/rules', (req, res) => {
     res.sendFile(path.join(__dirname, 'website', 'rules.html'));
 });
-app.get('/crew', (req, res) => {
+app.get('/old/crew', (req, res) => {
     res.sendFile(path.join(__dirname, 'website', 'crew.html'))
 });
-app.get('/test', (req, res) => {
+app.get('/old/test', (req, res) => {
     res.sendFile(path.join(__dirname, 'website', 'test.html'))
 });
-app.get('/api/auth/discord/redirect', async (req, res) => {
+app.get('/old/api/auth/discord/redirect', async (req, res) => {
     const { code } = req.query;
 
     if (code) {
@@ -78,7 +78,7 @@ app.get('/api/auth/discord/redirect', async (req, res) => {
     }
 });
 
-app.get('/api/userinfo', (req, res) => {
+app.get('/old/api/userinfo', (req, res) => {
     if (req.session.user) {
         return res.json(req.session.user);
     } else {
@@ -86,7 +86,7 @@ app.get('/api/userinfo', (req, res) => {
     }
 });
 
-app.get('/api/auth/logout', (req, res) => {
+app.get('/old/api/auth/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).send('Failed to log out');
@@ -95,7 +95,7 @@ app.get('/api/auth/logout', (req, res) => {
     });
 });
 
-app.get('/api/auth/login', (req, res) => {
+app.get('/old/api/auth/login', (req, res) => {
     res.redirect('https://discord.com/oauth2/authorize?client_id=1086587635373461574&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A1500%2Fapi%2Fauth%2Fdiscord%2Fredirect&scope=guilds+identify+email')
 })
 app.listen(1500, () => {console.log(`Running on localhost:1500`)});
