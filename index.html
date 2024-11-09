@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+    <meta content="Worthington Family | عائلة ورثنيجتون" name="twitter:title">
+    <meta content="Family in WnashTime RP" name="twitter:description">
+    <meta content="https://i.postimg.cc/dV9KbvFp/8f2b4d875a225e191fca0c43b3df982b.webp" name="twitter:image">
+    <title>Worthington | ورثنيجتون</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Title" id="logo">
+        <nav id="navbar" class="hidden">
+            <a href="/#">الرئيسية</a>
+            <a href="#about-us" class="family-link">عن العائلة</a>
+            <a href="/rules">قوانين العائلة</a>
+            <a href="/crew">طاقم العائلة</a>
+            <a href="/test">أختبر نفسك</a>
+            <a href="#servers">الخوادم</a>
+        </nav>
+        <a id="loginButton" href="/api/auth/login" class="login-button">تسجيل دخول</a>
+        <select id="selectMenu" class="hidden">
+            <option value="#serversCard">الخوادم</option>
+            <option value="test.html">أختبر نفسك</option>
+            <option value="crew.html">طاقم العائلة</option>
+            <option value="rules.html">قوانين العائلة</option>
+            <option value="#about-us">عن العائلة</option>
+            <option value="index.html">الرئيسية</option>
+        </select>
+        <hr class="header-end">
+    </header>
+    
+    <div class="image-container">
+        <div class="background-image"></div>
+        <img src="logo-text.png" class="title-image" alt="title" />
+        <a href="https://discord.gg/worthington" class="center-button">الانضمام للديسكورد</a>
+    </div>
+
+    <hr class='image-end' />
+    <div class="description-section">
+        <h2 class="description-title">
+            <svg class="correct-icon" fill="#B4BCC7" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <title></title>
+                <path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165Zm25-91.5-29,35L76,94c-4.5-3.5-10.5-2.5-14,2s-2.5,10.5,2,14c6,4.5,12.5,9,18.5,13.5,4.5,3,8.5,7.5,14,8,1.5,0,3.5,0,5-1l3-3,22.5-27c4-5,8-9.5,12-14.5,3-4,4-9,.5-13L138,71.5c-3.5-2.5-9.5-2-13,2Z"></path>
+            </svg>
+            <span class="title-text">عائلة <span class="familyName">ورثنيجتون</span> في سيرفر وناسة تايم</span>
+        </h2>
+
+        <p class="description-text">
+            ورثنيجتون التاريخ يحكي نفسه من الإسم ، هي عائلة معروفة ومتكاملة عُرفت بِالنسب والأصل والفصل في سيرفر وناسة تايم للحياة الواقعية داخل مجتمع MTA:SA. مُيزت العائلة بتاريخ مؤسسيها وأجدادها وخوضِهم للحروب والمعارِك والصعاب لتوفير بيئة مُميزة مليئة بالرفاهية. وقيل في أحد ليالي أجداد العائلة ، سأجعل منكم عائلة تحضى بِرفاهية تلك التي لم يحضى بها أجدادكم كذلك اليوم تمتلك العائلة الكثير من المُمتلكات باهضة الثمن ، وشركات وافرادها ذو مناصب عُليا ويتطلع جميع افرادها إلى النجاح والإستمرار بالنجاحات وتعتبر مكاناً رائع لتكوين المُتعة والإثارة والتشويق.
+        </p>
+    </div>
+    <div class="card-section">
+        <div class="card-background" id="about-us"></div>
+        <div class="card">
+            <div class="content">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="#00d8a3" width="30" height="30" style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);">
+                    <path d="m 21.608582,291.91329 a 2.5103279,2.5103015 0 0 0 -2.510326,2.51029 2.5103279,2.5103015 0 0 0 2.510326,2.5103 2.5103279,2.5103015 0 0 0 2.510328,-2.5103 2.5103279,2.5103015 0 0 0 -2.510328,-2.51029 z m 2.245568,5.54153 -2.191635,3.42838 -2.221051,-3.42593 c -2.031869,0.86222 -3.375318,2.82902 -3.439442,5.03531 1.374267,1.57104 3.38924,2.56792 5.642107,2.56792 2.251919,0 4.266652,-0.99558 5.640885,-2.56546 -0.06074,-2.20606 -1.400771,-4.17468 -3.430864,-5.04022 z" />
+                    <path d="m 14.970358,304.9045 a 2.1300753,2.1301034 0 0 0 -2.130074,2.1301 2.1300753,2.1301034 0 0 0 2.130074,2.1301 2.1300753,2.1301034 0 0 0 2.130076,-2.1301 2.1300753,2.1301034 0 0 0 -2.130076,-2.1301 z m 1.905419,4.70225 -1.859655,2.90912 -1.884617,-2.90704 c -1.724091,0.73163 -2.864042,2.40055 -2.918453,4.27268 1.1661,1.33309 2.875856,2.17899 4.787469,2.17899 1.910808,0 3.620359,-0.84479 4.786429,-2.17691 -0.05153,-1.87194 -1.188587,-3.5424 -2.911173,-4.27684 z" />
+                </svg>
+                <div class="count" id="memberCount">0+</div>
+                <p>أعضاء الديسكورد</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="count" id="factionCount">0+</div>
+                <p>فاكشن العائلة</p>
+            </div>
+        </div>
+    </div>
+    
+    <p class="notes">إحصائيات العائلة للموسم الحالي (الموسم الثالث)</p>
+    
+    <div class="discord-servers-title">سيرفرات الديسكورد الرسمية</div>
+    <div class="card-section" id="servers">
+        <div class="server-grid">
+            <a href="https://discord.gg/worthington" target="_blank" rel="noopener noreferrer" class="server-card">
+                <div class="server-image red-bg">
+                    <img src="worthington.png">
+                </div>
+                <div class="server-info">
+                    <h2>الرئيسي</h2>
+                </div>
+            </a>
+            <a href="https://discord.gg/JS7bAvBPtA" target="_blank" rel="noopener noreferrer" class="server-card">
+                <div class="server-image black-bg">
+                    <img src="blackhands.png">
+                </div>
+                <div class="server-info">
+                    <h2>العصابة</h2>
+                </div>
+            </a>
+            <a href="https://discord.gg/wnashtime" target="_blank" rel="noopener noreferrer" class="server-card">
+                <div class="server-image blue-bg">
+                    <img src="wnashtime.png">
+                </div>
+                <div class="server-info">
+                    <h2>وناسة تايم</h2>
+                </div>
+                <a href="https://discord.gg/JVX7gDfE" target="_blank" rel="noopener noreferrer" class="server-card">
+                    <div class="server-image blue-bg">
+                        <img src="factions.png">
+                    </div>
+                    <div class="server-info">
+                        <h2>وناسة تايم — الفاكشنات</h2>
+                    </div>
+            </a>
+            </a>
+        </div>
+    </div>
+    
+    <div class="line-container">
+        <hr class="page-end" />
+        <img src="logo-text.png" class="end-image" alt="image" />
+        <a href="https://discord.com" target="_blank">
+            <a href="https://discord.gg/worthingtonn" target="_blank">
+                <svg class="discord-logo" viewBox="0 -28.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#B4BCC7" stroke="#B4BCC7">
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z" fill="#B4BCC7" fill-rule="nonzero"></path>
+                  </g>
+                </svg>
+              </a>
+        </div>
+    <p class='copyright'>© 2024 Worthington Copyrights - Developed by iDrone</p>
+    
+    <script>
+        fetch('/api/userinfo')
+    .then(response => {
+        if (response.status === 200) {
+            return response.json();
+        }
+        throw new Error('User not authenticated');
+    })
+    .then(user => {
+        const loginButton = document.getElementById('loginButton');
+        
+        loginButton.innerHTML = '';
+
+        const displayName = document.createElement('span');
+        displayName.textContent = 'Dashboard';
+        displayName.classList.add('user-name');
+
+        loginButton.appendChild(displayName); 
+        loginButton.href = '/dashboard';
+    })
+    .catch(error => {
+        console.log('User not authenticated');
+    });
+        const memberCountElement = document.getElementById('memberCount');
+        const factionCountElement = document.getElementById('factionCount');
+        let hasAnimated = false;
+    
+        function incrementCount(element, target) {
+            let count = 0;
+            const increment = target / 100;
+            const interval = setInterval(() => {
+                count += increment;
+                if (count >= target) {
+                    clearInterval(interval);
+                    element.textContent = target + '+';
+                } else {
+                    element.textContent = Math.ceil(count) + '+';
+                }
+            }, 30);
+        }
+    
+        function onIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    incrementCount(memberCountElement, 400);
+                    incrementCount(factionCountElement, 130);
+                    hasAnimated = true;
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+    
+        const observer = new IntersectionObserver(onIntersection, {
+            threshold: 0.1
+        });
+    
+        observer.observe(document.querySelector('.card-section'));
+        const selectMenu = document.getElementById('selectMenu');
+    
+    selectMenu.addEventListener('change', function() {
+        const selectedValue = this.value;
+    
+        if (selectedValue === 'rules.html') {
+            window.location.href = selectedValue;
+        } else if (selectedValue === 'crew.html') {
+            window.location.href = selectedValue;
+        } else if (selectedValue === 'test.html') {
+            window.location.href = selectedValue
+            } else {
+            window.location.href = 'index.html'
+        }
+    });
+    </script>
+</body>
+</html>

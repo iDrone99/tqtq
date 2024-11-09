@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+    <title>Worthington | ورثنيجتون</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Title" id="logo">
+        <nav id="navbar" class="hidden">
+            <a href="/#">الرئيسية</a>
+            <a href="/#about-us" class="family-link">عن العائلة</a>
+            <a href="/rules">قوانين العائلة</a>
+            <a href="/crew">طاقم العائلة</a>
+            <a href="/test">أختبر نفسك</a>
+            <a href="/#servers">الخوادم</a>
+        </nav>
+        <a id="loginButton" href="/api/auth/login" class="login-button">تسجيل دخول</a>
+        <select id="selectMenu" class="hidden">
+            <option value="#serversCard">الخوادم</option>
+            <option value="test.html">أختبر نفسك</option>
+            <option value="crew.html">طاقم العائلة</option>
+            <option value="rules.html">قوانين العائلة</option>
+            <option value="#about-us">عن العائلة</option>
+            <option value="index.html">الرئيسية</option>
+        </select>
+        <hr class="header-end">
+    </header>
+    
+    <div id="image-container2">
+        <div class="background-header" id="background2"></div>
+        <div class="title-and-line">
+            <h1 class="title">القوانين</h1>
+            <hr class='background-end'/>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <aside class="sidebar">
+            <button class="sidebar-btn active" onclick="changeRules('familyRules')">قوانين العائلة</button>
+            <button class="sidebar-btn" onclick="changeRules('jailTimes')">أوقات السجون</button>
+            <button class="sidebar-btn" onclick="changeRules('joinRequireds')">متطلبات الدخول للعائلة</button>
+        </aside>
+
+        <section class="rules-container" id="rulesContainer"></section>
+    </div>
+    <div class="line-container">
+        <hr class="page-end" />
+        <img src="logo-text.png" class="end-image" alt="image" />
+        <a href="https://discord.com" target="_blank">
+            <a href="https://discord.gg/worthingtonn" target="_blank">
+                <svg class="discord-logo" viewBox="0 -28.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#B4BCC7" stroke="#B4BCC7">
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z" fill="#B4BCC7" fill-rule="nonzero"></path>
+                  </g>
+                </svg>
+              </a>
+        </div>  
+       <p class='copyright'>© 2024 Worthington Copyrights - Developed by iDrone</p>
+
+    <script>
+        function changeRules(section) {
+            const rulesContainer = document.getElementById('rulesContainer');
+            rulesContainer.classList.remove('show');
+    
+            setTimeout(() => {
+                let rulesHtml = '';
+                    
+                const rulesData = {
+                    familyRules: {
+                        rules: [
+                            { title: "الأخلاق والإحترام", description: "يجب إحترام الجميع، المخالفة ستعرضك لعقوبات وخيمة" },
+                            { title: "النشر والتجارة", description: "يُمنع النشر والتجارة والإعلان والإنتحال في السيرفر او في الخاص للأعضاء منعًا نهائيًا" },
+                            { title: "العنصرية", description: "يُمنع العنصرية بجميع أنواعها بناءً على سمات مثل العرق أو الأصل القومي أو الجنس أو الانتماء الديني" },
+                            { title: "الأسماء والصور", description: "يُمنع استخدام أسماء غير مناسبة او صور غير مناسبة قد تتعرض للحظر النهائي او الطرد من السيرفر" },
+                            { title: "المحتوى", description: "يُمنع نشر المحتوى الغير اخلاقي والاباحي في السيرفر وعقوبته الحظر النهائي" },
+                            { title: "المواضيع السياسية والدينية", description: "يًمنع منعًا باتًا التحدث بالمواضيع السياسية او الدينية" },
+                            { title: "الحسابات", description: "يُمنع أستخدام حسابات أخرى لتفادي العقوبات" },
+                            { title: "طلب الرتب الإدارية", description: "يُمنع طلب الرتب الإدارية او الرتب الشرفية منعًا باتًا وقد يضعك طلبك في القائمة السوداء للإدارة" },
+                            { title: "القذف والسب", description: "يُمنع القذف والسب بجميع انواعه، كما يُمنع استخدام ألفاظ غير مناسبة للفئة العمرية دون سن الـ 13" }
+                        ]
+                    },
+                    jailTimes: {
+                        rules: [
+                            { title: "PG", description: "فعل أشياء خارقة بالواقع", time: "120m" },
+                            { title: "DM", description: "القتل بدون سبب", time: "150m" },
+                            { title: "VDM", description: "قتل اللاعبين بإستعمال المركبة بدون سبب", time: "150m" },
+                            { title: "RK", description: "قتل الإنتقام", time: "100m" },
+                            { title: "SK", description: "القتل في منطقة الريسباون", time: "150m" },
+                            { title: "TK", description: "قتل صديق معك بنفس الفاكشن", time: "150m" },
+                            { title: "PK", description: "فقدان الذاكرة بعد الموت", time: "100m" },
+                            { title: "SL", description: "فعل شيء مغزز", time: "80m" },
+                            { title: "WS", description: "حالة خاطئة للشخصية", time: "30m" },
+                            { title: "WA", description: "وضع إعلان خاطئ", time: "30m" },
+                            { title: "PD", description: "إستفزاز الشرطة لغرض المتعة", time: "60m" },
+                            { title: "DOS", description: "شارة بدون لبس الخدمة او العكس", time: "80m" },
+                            { title: "NJ", description: "السرقة والقفز فوق المركبات المتحركة", time: "60m" },
+                            { title: "NG", description: "إنزال الشخص من مركبته", time: "60m" },
+                            { title: "None-RP", description: "فعل الأشياء دون إستخدام الآربي", time: "80m" },
+                            { title: "Breaking property", description: "تخريب او تكسير ممتلكات", time: "30m" }
+                        ]
+                    },
+                    joinRequireds: {
+                        rules: [
+                            { title: "الشخصيات", description: "يجب عليك التقديم بالشخصية الأساسية فقط" },
+                            { title: "عدد ساعات التواجد", description: "يجب أن تكون شخصيتك الأساسية قد تجاوزت الـ 100 ساعة داخلها" },
+                            { title: "السجل الإداري", description: "يجب أن يكون سجل حسابك أن لا يتجاوز الـ 4 مخالفات إدارية" },
+                            { title: "الخبرة الكافية", description: "يجب أن تكون لديك كامل الخبرات في الحياة الواقعية" }
+                        ]
+                    }
+                };
+                    
+                if (rulesData[section]) {
+                    const { rules } = rulesData[section];
+                    
+                    rules.forEach((rule, index) => {
+                        rulesHtml += `
+                            <div class="rule">
+                                <p>
+                                    <span class="rule-number">${index + 1}.</span>
+                                    <span class="rule-title">${rule.title}</span>
+                                    ${rule.time ? `<span class="jailTime">${rule.time}</span>` : ''}
+                                </p>
+                                <small class="rule-description">${rule.description}</small>
+                            </div>`;
+                    });
+                }
+                
+                rulesContainer.innerHTML = rulesHtml;
+                
+                const rules = rulesContainer.querySelectorAll('.rule');
+                rules.forEach(rule => {
+                    rule.style.backgroundColor = '#1e1e2e';
+                    rule.style.borderRadius = '10px';
+                    rule.style.padding = '8px';
+                    rule.style.marginBottom = '8px';
+                    rule.style.height = '100px';
+                });
+                
+                document.querySelectorAll('.sidebar-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`.sidebar-btn[onclick="changeRules('${section}')"]`).classList.add('active');
+                
+                rulesContainer.classList.add('show');
+            }, 300);
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialSection = 'familyRules';
+            changeRules(initialSection);
+            
+            setTimeout(() => {
+                const rulesContainer = document.getElementById('rulesContainer');
+                rulesContainer.classList.add('show');
+            }, 300);
+        });
+    
+        const selectMenu = document.getElementById('selectMenu');
+        selectMenu.addEventListener('change', function() {
+            const selectedValue = this.value;
+    
+            if (selectedValue !== 'index.html') {
+                window.location.href = selectedValue;
+            }
+        });
+        fetch('/api/userinfo')
+    .then(response => {
+        if (response.status === 200) {
+            return response.json();
+        }
+        throw new Error('User not authenticated');
+    })
+    .then(user => {
+        const loginButton = document.getElementById('loginButton');
+        
+        loginButton.innerHTML = '';
+
+        const displayName = document.createElement('span');
+        displayName.textContent = 'Dashboard';
+        displayName.classList.add('user-name');
+
+        loginButton.appendChild(displayName); 
+        loginButton.href = '/dashboard';
+    })
+    .catch(error => {
+        console.log('User not authenticated');
+    });
+    </script>    
+</body>
+</html>

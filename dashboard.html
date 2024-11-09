@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worthington | ورثنيجتون</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Title" id="logo">
+        <nav id="navbar" class="hidden">
+            <a href="/#">الرئيسية</a>
+            <a href="/#about-us" class="family-link">عن العائلة</a>
+            <a href="/rules">قوانين العائلة</a>
+            <a href="/crew">طاقم العائلة</a>
+            <a href="/test">أختبر نفسك</a>
+            <a href="/#servers">الخوادم</a>
+        </nav>
+        <a id="loginButton" href="/api/auth/login" class="login-button">تسجيل دخول</a>
+        <select id="selectMenu" class="hidden">
+            <option value="#serversCard">الخوادم</option>
+            <option value="test.html">أختبر نفسك</option>
+            <option value="crew.html">طاقم العائلة</option>
+            <option value="rules.html">قوانين العائلة</option>
+            <option value="#about-us">عن العائلة</option>
+            <option value="index.html">الرئيسية</option>
+        </select>
+        <hr class="header-end">
+    </header>
+    
+    <div id="image-container2">
+        <div class="background-header" id="background1"></div>
+        <div class="title-and-line">
+            <h1 class="title">Welcome <span id="username"></span>,</h1>
+            <hr class='background-end'/>
+        </div>
+    </div>
+
+    <div class="user-wallpaper">
+        <img id="avatarImage" src="" alt="User Avatar">
+        <p class="user-wallpaper-username"><span id="username-text"></span></p>
+    
+        <div class="email-section">
+            <p class="email-title">Email</p>
+            <p class="user-wallpaper-email"><span id="email-text"></span></p>
+        </div>
+        <a class="Logout-button" href="/api/auth/logout">Logout</a>
+    </div>
+
+    <script>
+fetch('/api/userinfo')
+    .then(response => {
+        if (!response.ok) throw new Error('User not authenticated');
+        return response.json();
+    })
+    .then(data => {
+        console.log('User data from API:', data); 
+
+        document.getElementById('username').textContent = data.displayname; 
+        document.getElementById('username-text').textContent = data.displayname;
+        document.getElementById('email-text').textContent = data.email;
+        document.getElementById('avatarImage').src = data.avatar;
+
+        const loginButton = document.getElementById('loginButton');
+        loginButton.innerHTML = '';
+
+        const displayName = document.createElement('span');
+        displayName.textContent = 'Dashboard';
+        displayName.classList.add('user-name');
+
+        loginButton.appendChild(displayName); 
+        loginButton.href = '/dashboard';
+    })
+    .catch(error => {
+        console.error('Error fetching user info:', error);
+        console.log('User not authenticated');
+    });
+    </script>
+</body>
+</html>
